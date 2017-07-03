@@ -273,14 +273,6 @@ h2 {
     border: 0;
 }
 
-.parallax {
-    background: url('../images/city.jpg') no-repeat center fixed;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: repeat-y;
-    background-position: center center;
-}
-
 .contact-btn,
 .contact-btn:hover,
 .contact-btn:focus {
@@ -322,19 +314,6 @@ h2 {
     }
 }
 
-.quote-main {
-    font-size: 30px;
-    color: white;
-    text-align: center;
-    font-family: 'Yellowtail', cursive;
-    text-shadow: 1px 1.5px #000;
-}
-
-.quote-author {
-    color: darkgray;
-    text-align: center;
-}
-
 .contact-title {
     text-align: center;
     font-size: 35px;
@@ -356,10 +335,6 @@ h2 {
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: #36393E;
-}
-
-#quote {
-    padding: 60px 0px;
 }
 
 #contact {
