@@ -1,5 +1,5 @@
 (function ($) {
-    $(".navbar a").on('click', function (event) {
+    $(".navbar a[target!='_blank']").on('click', function (event) {
         event.preventDefault();
         var hash = this.hash;
         $('html, body').animate({
