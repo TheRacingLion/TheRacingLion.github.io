@@ -2,14 +2,14 @@
 
     Launch: 17/04/2017
     Site name: TRLCS
-    Site URL: http://trlcs.com/
+    Site URL: https://trlcs.com/
     Components: Bootstrap, jQuery, Animate.
 
 
 /* TEAM */ 
 
     Owner: TheRacingLion
-    Site: http://trlcs.com/
+    Site: https://trlcs.com/
     Location: Portugal
     Contact: dev@trlcs.com
-    Discord: @The_Racing_Lion#4810
+    Discord: @The_Racing_Lion#0001
