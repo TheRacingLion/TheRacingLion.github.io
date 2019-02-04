@@ -1,5 +1,5 @@
 /*
-  Created by TheRacingLion (http://trlcs.com/) [ 17 / 04 / 2017 ]
+  Created by TheRacingLion (https://trlcs.com/) - 2019
   -*Read LICENSE to know more about permissions*-
 */
 
@@ -12,7 +12,6 @@ html {
 }
 
 body {
-    font-family: "Raleway", Helvetica, Arial, sans-serif line-height: 20px;
     color: #999999;
     font-size: 16px;
 }
@@ -162,6 +161,7 @@ h2 {
 }
 
 .banner-info {
+    position: relative;
     padding-top: 190px;
 }
 
@@ -170,7 +170,7 @@ h2 {
 }
 
 .banner-text {
-    color: #fff;
+    color: rgb(46, 46, 46);
 }
 
 .banner-text h1 {
@@ -187,7 +187,7 @@ h2 {
     max-width: 200px;
     border-radius: 100%;
     box-sizing: border-box;
-    border: 5px solid #cfd8dc;
+    border: 2px solid #cfd8dc;
     transition: 0.2s;
     animation: appear 0.4s 0.5s ease-in-out;
     animation-fill-mode: backwards;
@@ -202,18 +202,13 @@ h2 {
     width: 75vw;
     max-height: 250px;
     max-width: 250px;
-    border: 2.5px solid #FFF;
+    border-radius: 10px 60px;
+    border: 1px solid #FFF;
 }
 
 #header-text {
-    font-size: 62px;
-    font-family: 'Yellowtail', cursive;
-    text-shadow: 1px 1.5px #e67e22;
-}
-
-#header-subtitle {
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 40px;
+    text-shadow: 1px 1px #fff;
 }
 
 #section-title {
@@ -221,13 +216,15 @@ h2 {
 }
 
 .project-item {
-    box-shadow: 0 2px 12px 0 white;
     padding-top: 5px;
     padding-bottom: 5px;
     max-width: 300px;
     margin: auto;
     text-align: center;
     font-family: 'Oswald', sans-serif;
+    background-color: #2C2F33;
+    border: 1px solid rgb(32, 33, 36);
+    margin-top: 20px;
 }
 
 .project-container {
@@ -300,6 +297,9 @@ h2 {
         display: table;
         table-layout: fixed;
     }
+    .project-item {
+        margin-top: 15px;
+    }
 }
 
 @media (min-width: 551px) and (max-width: 980px) {}
@@ -327,7 +327,8 @@ h2 {
 }
 
 #about {
-    padding: 60px 0px;
+    padding: 40px 0px;
+    padding-bottom: 0px;
     background-color: #2C2F33;
 }
 
