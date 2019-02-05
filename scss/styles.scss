@@ -1,0 +1,311 @@
+/*
+  Created by TheRacingLion (https://trlcs.com/) - 2019
+  -*Read LICENSE to know more about permissions*-
+*/
+
+@import 'global';
+
+.center {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+
+  &.logo-center {
+    top: 24%;
+  }
+
+  &.text-center {
+    top: 58%;
+    z-index: 10;
+  }
+
+  &.links {
+    top: 75%;
+  }
+}
+
+.text-center {
+  & p {
+    font-size: 2vw;
+    text-shadow: 2px 2px #000;
+    text-transform: uppercase;
+  }
+}
+
+.element {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.links {
+  & .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  & .link {
+    font-size: 18px;
+    width: 100px;
+    height: 100px;
+
+    &:hover {
+      color: rgb(255, 183, 55);
+    }
+  }
+
+  & span {
+    margin-top: 20px;
+    color: #ccc;
+    font-size: 35px;
+  }
+}
+
+/* Logo Image */
+
+.logo {
+  height: 75vw;
+  width: 75vw;
+  max-height: 225px;
+  max-width: 225px;
+  border-radius: 100%;
+  box-sizing: border-box;
+  border: 2px solid #000;
+  transition: 0.2s;
+  animation: appear 0.4s 0.5s ease-in-out;
+  animation-fill-mode: backwards;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+/* Particle Animations */
+
+#background-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#line-particles {
+  position: fixed;
+  width: 100%;
+  height: 15%;
+  top: 48%;
+  left: 0px;
+}
+
+/* Animated Planet */
+
+$dark: #181411;
+$gold: #a78247;
+$borderwidth: 0.1vw;
+$animationtime: 5s;
+
+@mixin bordered(){
+  border: $borderwidth solid $gold;
+}
+
+.icon-wrapper {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  border: 0;
+  overflow: visible;
+
+  & div {
+    position: absolute;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    @include bordered();
+    overflow: hidden;
+    &:before, &:after{
+      content: '';
+      display: block;
+      position: absolute;
+    }
+  }
+  
+  & .icon {
+    position: relative;
+    display: inline-block;
+    width: 12vw;
+    height: 12vw;
+    margin: 2.5vw 1.5vw;
+    border: 0;
+    overflow: visible;
+    
+    & .moon, & .planetoid, & .planet {
+      border-radius: 50%;
+      background: $dark;
+    }
+    
+    &.right-planet {
+      
+      & .moon{
+        &.top{
+          top: 15%;
+          left: 10%;
+          width: 8%;
+          height: 8%;
+          animation: moontop $animationtime ease 0s infinite;
+        }
+        &.bottom{
+          top: 85%;
+          right: 5%;
+          width: 1%;
+          height: 1%;
+          animation: moonbottom $animationtime ease 0s infinite;
+        }
+      }
+      
+      & .planet{
+        top: 25%;
+        left: 24%;
+        width: 63%;
+        height: 63%;
+      }
+      
+      & .ring{
+        top: 45%;
+        left: 15%;
+        width: 80%;
+        height: 25%;
+        border-radius: 50%;
+        border-color: transparent $gold $gold $gold;
+        transform: rotate(17deg);
+        animation: ring $animationtime linear 0s infinite alternate;
+        &.planet{
+          top: 62.5%;
+          left: 40%;
+          width: 8%;
+          height: 8%;
+          border-color: $gold;
+          background: $dark;
+          z-index: 1;
+          overflow: visible;
+          animation: ringplanet $animationtime ease 0s infinite;
+          &:after{
+            top: -55%;
+            left: 80%;
+            width: 1%;
+            height: 1%;
+            @include bordered();
+            border-radius: 50%;
+          }
+        }
+      }
+      
+      & .planetoid{
+        top: 25%;
+        left: 70%;
+        width: 20%;
+        height: 20%;
+        overflow: visible;
+        background: $dark;
+        &:before{
+          top: -25%;
+          left: -25%;
+          width: 150%;
+          padding-top: 150%;
+          @include bordered();
+          border-radius: 50%;
+          border-color: $gold $gold transparent transparent;
+          transform: rotate(55deg);
+          background: transparent;
+        }
+        &:after{
+          top: 100%;
+          left: 5%;
+          width: 30%;
+          padding-top: 15%;
+          @include bordered();
+          border-radius: 50%;
+          border-color: transparent transparent $gold transparent;
+          transform: rotate(35deg);
+          background: transparent;
+        }
+      }
+    }
+  }
+}
+
+@keyframes moontop{
+  0% {top: 15%;left: 10%;z-index:0;}
+  49% {top: 60%;left: 95%;z-index:0;}
+  50% {top: 60%;left: 95%;z-index:1;}
+  99% {top: 15%;left: 10%;z-index:1;}
+  100% {top: 15%;left: 10%;z-index:0;}
+}
+
+@keyframes moonbottom{
+  0% {top: 85%;left: 95%;z-index:0;}
+  49% {top: 40%;left: 5%;z-index:0;}
+  50% {top: 40%;left: 5%;z-index:-1;}
+  99% {top: 85%;left: 95%;z-index:-1;}
+  100% {top: 85%;left: 95%;z-index:0;}
+}
+
+@keyframes ring{
+  0% {transform:rotate(10deg);}
+  100% {transform:rotate(30deg);}
+}
+
+@keyframes ringplanet{
+  0% {transform:rotate(0deg);}
+  100% {transform:rotate(360deg);}
+}
+
+/* Media Queries */
+
+@media screen and (min-height: 680px) {
+  .logo {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
+
+/* Mobile Media Queries */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .icon-wrapper {
+    & .icon {
+      width: 25vw;
+      height: 25vw;
+    }
+  }
+
+  .logo {
+    max-width: 175px;
+    max-height: 175px;
+  }
+
+  .center {
+    &.logo-center {
+      top: 28%;
+    }
+    &.links {
+      top: 68%;
+    }
+  }
+
+  .text-center {
+    & p {
+      font-size: 6vw;
+    }
+  }
+
+  .links {
+    & .container {
+      display: block;
+    }
+    & span {
+      display: none;
+    }
+  }
+}

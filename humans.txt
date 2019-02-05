@@ -3,7 +3,6 @@
     Launch: 17/04/2017
     Site name: TRLCS
     Site URL: https://trlcs.com/
-    Components: Bootstrap, jQuery, Animate.
 
 
 /* TEAM */ 
