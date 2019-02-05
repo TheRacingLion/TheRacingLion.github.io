@@ -144,7 +144,7 @@ a {
 }
 .icon-wrapper .icon .moon, .icon-wrapper .icon .planetoid, .icon-wrapper .icon .planet {
   border-radius: 50%;
-  background: #181411;
+  background: #18120a;
 }
 .icon-wrapper .icon.right-planet .moon.top {
   top: 15%;
@@ -165,6 +165,9 @@ a {
   left: 24%;
   width: 63%;
   height: 63%;
+  background: #8d3026;
+  background: -webkit-linear-gradient(to right, #bd3f31, #000000);
+  background: linear-gradient(to right, #bd3f31, #000000);
 }
 .icon-wrapper .icon.right-planet .ring {
   top: 45%;
@@ -182,7 +185,7 @@ a {
   width: 8%;
   height: 8%;
   border-color: #a78247;
-  background: #181411;
+  background: #18120a;
   z-index: 1;
   overflow: visible;
   animation: ringplanet 5s ease 0s infinite;
@@ -196,12 +199,13 @@ a {
   border-radius: 50%;
 }
 .icon-wrapper .icon.right-planet .planetoid {
+  display: none;
   top: 25%;
   left: 70%;
   width: 20%;
   height: 20%;
   overflow: visible;
-  background: #181411;
+  background: #18120a;
 }
 .icon-wrapper .icon.right-planet .planetoid:before {
   top: -25%;
@@ -296,6 +300,12 @@ a {
     transform: rotate(360deg);
   }
 }
+@media (min-width: 320px) and (max-width: 480px) {
+  .icon-wrapper .icon {
+    width: 25vw;
+    height: 25vw;
+  }
+}
 /* Media Queries */
 @media screen and (min-height: 680px) {
   .logo {
@@ -305,11 +315,6 @@ a {
 }
 /* Mobile Media Queries */
 @media (min-width: 320px) and (max-width: 480px) {
-  .icon-wrapper .icon {
-    width: 25vw;
-    height: 25vw;
-  }
-
   .logo {
     max-width: 175px;
     max-height: 175px;
