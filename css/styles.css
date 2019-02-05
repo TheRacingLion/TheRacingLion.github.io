@@ -80,6 +80,13 @@ a {
   font-size: 35px;
 }
 
+/* Car Image */
+.flying-car {
+  position: absolute;
+  max-height: 20px;
+  max-width: 20px;
+}
+
 /* Logo Image */
 .logo {
   height: 75vw;

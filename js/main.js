@@ -128,6 +128,14 @@ function ready(fn) {
   }
 }
 
+function getSeen (first) {
+  var stored = JSON.parse(localStorage.getItem("seenPlanet"));
+  if (first && stored !== true) {
+    localStorage.removeItem("seenPlanet");
+    return false;
+  } else return stored;
+}
+
 var fallingPlanet = anime({
   targets: ".right-planet .planetoid",
   translateX: [
@@ -164,13 +172,17 @@ var shakePlanet = anime({
   loop: 10
 });
 
-function getSeen (first) {
-  var stored = JSON.parse(localStorage.getItem("seenPlanet"));
-  if (first && stored !== true) {
-    localStorage.removeItem("seenPlanet");
-    return false;
-  } else return stored;
-}
+var flyingCar = anime({
+  targets: ".flying-car",
+  translateX: [-50, 1500],
+  translateY: [200, -50],
+  duration: 20000,
+  easing: "linear",
+  loop: true,
+  delay: 20000
+});
+
+var isFlying = true;
 
 ready(function(){
   var hasSeenFirst = getSeen(true);
@@ -191,5 +203,10 @@ ready(function(){
         }
       }
     }
+  };
+
+  document.querySelector(".flying-car").onclick = function () {
+    flyingCar[isFlying ? 'pause' : 'play']();
+    isFlying = !isFlying;
   };
 })
