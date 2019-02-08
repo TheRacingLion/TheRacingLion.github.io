@@ -173,7 +173,7 @@ var shakePlanet = anime({
 });
 
 var flyingCar = anime({
-  targets: ".flying-car",
+  targets: ".flying-car-container",
   translateX: [-50, 1500],
   translateY: [200, -50],
   duration: 20000,
@@ -181,8 +181,6 @@ var flyingCar = anime({
   loop: true,
   delay: 20000
 });
-
-var isFlying = true;
 
 ready(function(){
   var hasSeenFirst = getSeen(true);
@@ -205,8 +203,14 @@ ready(function(){
     }
   };
 
-  document.querySelector(".flying-car").onclick = function () {
-    flyingCar[isFlying ? 'pause' : 'play']();
-    isFlying = !isFlying;
+  var flyingCarEl = document.querySelector(".flying-car-container");
+  var flyingCarTooltip = document.querySelector(".flying-car-container span")
+  flyingCarEl.onmouseenter = function () {
+    flyingCar.pause();
+    flyingCarTooltip.style.display = "inline";
   };
+  flyingCarEl.onmouseleave = function () {
+    flyingCar.play();
+    flyingCarTooltip.style.display = "none";
+  }
 })
