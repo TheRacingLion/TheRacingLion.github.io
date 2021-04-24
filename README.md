@@ -1,5 +1,5 @@
 <!---
-  Created by TheRacingLion (http://trlcs.com/) - 2019
+  Created by TheRacingLion (http://trlcs.com/) - 2021
   -*Read LICENSE to know more about permissions*-
 
   Readme File. Everything there is to know about this website.
@@ -21,4 +21,4 @@ Source code for my personal website.
 
 You are free to do what you want with the code as long as you keep the original licence shown in this repository, or give me credit somewhere else in your project.
 
-[MIT](LICENSE). Copyright (c) 2017 [TheRacingLion](http://trlcs.com/).
+[MIT](LICENSE). Copyright (c) 2021 [TheRacingLion](http://trlcs.com/).

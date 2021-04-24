@@ -11,4 +11,3 @@
     Site: https://trlcs.com/
     Location: Portugal
     Contact: dev@trlcs.com
-    Discord: @The_Racing_Lion#0001
